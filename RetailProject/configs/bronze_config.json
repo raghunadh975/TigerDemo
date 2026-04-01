@@ -6,7 +6,8 @@
         "load_type": "incremental",
         "catalog_name": "retail",
         "source_schema": "raw",
-        "target_schema": "bronze"
+        "target_schema": "bronze",
+        "tracking_cols" : "customer_name,telephone,email"
     },
     {
         "table_name": "addresses",
@@ -15,7 +16,8 @@
         "load_type": "full",
         "catalog_name": "retail",
         "source_schema": "raw",
-        "target_schema": "bronze"
+        "target_schema": "bronze",
+        "tracking_cols" : "address_line_1"
     },
     {
         "table_name": "orders",
