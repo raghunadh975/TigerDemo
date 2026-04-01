@@ -1,0 +1,47 @@
+[
+    {
+        "table_name": "customers",
+        "primary_keys": ["customer_id"],
+        "load_strategy": "SCD2",
+        "load_type": "incremental",
+        "catalog_name": "retail",
+        "source_schema": "raw",
+        "target_schema": "bronze"
+    },
+    {
+        "table_name": "addresses",
+        "primary_keys": ["customer_id", "address_type"],
+        "load_strategy": "SCD2",
+        "load_type": "full",
+        "catalog_name": "retail",
+        "source_schema": "raw",
+        "target_schema": "bronze"
+    },
+    {
+        "table_name": "orders",
+        "primary_keys": ["order_id"],
+        "load_strategy": "APPEND",
+        "load_type": "full",
+        "catalog_name": "retail",
+        "source_schema": "raw",
+        "target_schema": "bronze"
+    },
+    {
+        "table_name": "payments",
+        "primary_keys": ["payment_id"],
+        "load_strategy": "APPEND",
+        "load_type": "full",
+        "catalog_name": "retail",
+        "source_schema": "raw",
+        "target_schema": "bronze"
+    },
+    {
+        "table_name": "refunds",
+        "primary_keys": ["refund_id"],
+        "load_strategy": "APPEND",
+        "load_type": "full",
+        "catalog_name": "retail",
+        "source_schema": "raw",
+        "target_schema": "bronze"
+    }
+]
