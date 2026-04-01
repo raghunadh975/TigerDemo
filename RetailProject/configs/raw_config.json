@@ -1,0 +1,64 @@
+[
+  {
+    "table_name": "customers",
+    "file_name": "customers",
+    "file_format": "json",
+    "schema": {
+      "customer_id": "int",
+      "customer_name": "string",
+      "date_of_birth": "date",
+      "telephone": "string",
+      "email": "string",
+      "member_since": "date",
+      "created_timestamp": "timestamp"
+    }
+  },
+  {
+    "table_name": "addresses",
+    "file_name": "addresses",
+    "file_format": "tsv",
+    "delimiter": "\t",
+    "header": true,
+    "schema": {
+      "customer_id": "int",
+      "address_type": "string",
+      "address_line_1": "string",
+      "city": "string",
+      "state": "string",
+      "postcode": "string"
+    }
+  },
+  {
+    "table_name": "orders",
+    "file_name": "orders",
+    "file_format": "json",
+    "schema": {
+      "order_id": "int",
+      "customer_id": "int",
+      "order_date": "date",
+      "transaction_timestamp": "timestamp",
+      "total_amount": "decimal",
+      "payment_method": "string",
+    "items":"ARRAY<STRUCT<item_id:INT, name:STRING, category:STRING, price:INT, quantity:INT, details:STRUCT<brand:STRING, color:STRING>>>",
+    "order_status": "string"
+    }
+  },
+  {
+    "table_name": "payments",
+    "file_name": "payments",
+    "file_format": "excel",
+    "header": false,
+    "schema": {
+      "payment_id": "int",
+      "order_id": "int",
+      "payment_timestamp": "timestamp",
+      "amount_paid": "decimal",
+      "payment_method": "string"
+    }
+  },
+  {
+    "table_name": "refunds",
+    "file_name": "refunds/refunds_azure_sql_ddl.sql",
+    "file_format": "sql"
+  }
+]
