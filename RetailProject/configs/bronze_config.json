@@ -13,11 +13,11 @@
         "table_name": "addresses",
         "primary_keys": ["customer_id", "address_type"],
         "load_strategy": "SCD2",
-        "load_type": "full",
+        "load_type": "incremental",
         "catalog_name": "retail",
         "source_schema": "raw",
         "target_schema": "bronze",
-        "tracking_cols" : "address_line_1"
+        "tracking_cols" : "address_line_1,city,state,postcode"
     },
     {
         "table_name": "orders",
